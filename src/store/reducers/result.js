@@ -1,10 +1,12 @@
+import * as actionTypes from '../actions/actionTypes'
+
 const initialState={
     results:[]
 }
 
 const reducer = (state=initialState,action)=>{
     
-    if(action.type==='show_result'){
+    if(action.type===actionTypes.STORE_RESULT){
         return {
             ...state,
            results:state.results.concat({
@@ -13,7 +15,7 @@ const reducer = (state=initialState,action)=>{
            })
         }
     }
-    if(action.type==='delete_result'){
+    if(action.type===actionTypes.DELETE_RESULT){
         const updatedArray=state.results.filter((result,index)=> action.resultID!==result.id  )
         return {
             ...state,

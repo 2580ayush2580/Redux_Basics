@@ -1,27 +1,29 @@
+import * as actionTypes from '../actions/actionTypes'
+
 const initialState={
     counter:0
 }
 
 const reducer = (state=initialState,action)=>{
-    if(action.type==='increment'){
+    if(action.type=== actionTypes.INCREMENT){
         return {
             ...state,
             counter: state.counter + 1
         }
     }
-    if(action.type==='decrement'){
+    if(action.type===actionTypes.DECREMENT){
         return {
             ...state,
             counter: state.counter - 1
         }
     }
-    if(action.type==='add'){
+    if(action.type===actionTypes.ADD){
         return {
             ...state,
             counter: state.counter + action.value
         }
     }
-    if(action.type==='substract'){
+    if(action.type===actionTypes.SUBSTRACT){
         return {
             ...state,
             counter: state.counter - action.value 
